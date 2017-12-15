@@ -1,0 +1,47 @@
+<a routerLink='/survey'>Go Back to myPolls</a>
+
+
+<h1>{{myPoll.question}}</h1>
+<p>Cklick the vote button to choose one</p>
+
+<table>
+  <tr>
+    <th>Option</th>
+    <th>Current Count of Votes</th>
+    <th>Action</th>
+  </tr>
+  <tr>
+
+  </tr>
+  <div *ngIf="myPoll.option1">
+  <tr>
+    <td>{{myPoll.option1.name}}</td>
+    <td>{{myPoll.option1.votes}}</td>
+    <form (submit)='incrementCount(id,"option1")'>
+    <td><button type="submit">Vote</button></td>
+    </form>
+  </tr>
+  <tr>
+      <td>{{myPoll.option2.name}}</td>
+      <td>{{myPoll.option2.votes}}</td>
+      <form (submit)='incrementCount(id,"option2")'>
+      <td><button type="submit">Vote</button></td>
+      </form>
+  </tr>
+  <tr>
+      <td>{{myPoll.option3.name}}</td>
+      <td>{{myPoll.option3.votes}}</td>
+      <form (submit)='incrementCount(id,"option3")'>
+      <td><button type="submit">Vote</button></td>
+      </form>
+  </tr>
+  <tr>
+      <td>{{myPoll.option4.name}}</td>
+      <td>{{myPoll.option4.votes}}</td>
+      <form (submit)='incrementCount(id,"option4")'>
+      <td><button type="submit">Vote</button></td>
+      </form>
+  </tr>
+</div>
+
+</table>

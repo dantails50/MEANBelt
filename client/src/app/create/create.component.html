@@ -1,0 +1,58 @@
+<a routerLink="/survey">Cancel</a>
+
+<h3>Put Question and options here:</h3>
+
+<form #poll='ngForm' (submit)='onSubmit()'>
+<div class="form-group">
+  <label for="question">Question:</label>
+  <input type="text" name="question"
+    required
+    minlength="8"
+    [(ngModel)]='newPolls.question'
+    #question="ngModel"
+  >
+</div>
+<p *ngIf="!question.valid  && (question.dirtied || question.touched)">Please make the question at least 8 CHaracters long.</p>
+<div class="form-group">
+  <label for="option1"></label>
+  <input type="text" name="option1" 
+  required
+  minlength="4"
+  [(ngModel)]='newPolls.option1'
+  #option1='ngModel'
+  >
+</div>
+<p *ngIf="!option1.valid  && (option1.dirtied || option1.touched)">Please make the option at least 4 CHaracters long.</p>
+
+<div class="form-group">
+  <label for="option2"></label>
+  <input type="text" name="option2" 
+  required
+  minlength="4"
+  [(ngModel)]='newPolls.option2'
+  #option2='ngModel'
+  >
+</div>
+<p *ngIf="!option2.valid  && (option2.dirtied || option2.touched)">Please make the option at least 4 CHaracters long.</p>
+<div class="form-group">
+  <label for="option3"></label>
+  <input type="text" name="option3" 
+  required
+  minlength="4"
+  [(ngModel)]='newPolls.option3'
+  #option3='ngModel'
+  >
+</div>
+<p *ngIf="!option3.valid  && (option3.dirtied || option3.touched)">Please make the option at least 4 CHaracters long.</p>
+<div class="form-group">
+  <label for="option4"></label>
+  <input type="text" name="option4" 
+  required
+  minlength="4"
+  [(ngModel)]='newPolls.option4'
+  #option4='ngModel'
+  >
+</div>
+<p *ngIf="!option4.valid  && (option4.dirtied || option4.touched)">Please make the option at least 4 CHaracters long.</p>
+<button [disabled]="poll.invalid" type="submit" class="btn btn-primary">Register</button>
+</form>
